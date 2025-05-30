@@ -11,6 +11,7 @@ Building complex features with AI can sometimes feel like a black box. This work
 1.  **Defining Scope:** Clearly outlining what needs to be built with a Product Requirement Document (PRD).
 2.  **Detailed Planning:** Breaking down the PRD into a granular, actionable task list.
 3.  **Iterative Implementation:** Guiding the AI to tackle one task at a time, allowing you to review and approve each change.
+4.  **Technical Leadership:** Getting senior-level code reviews and architectural guidance to ensure high quality and best practices.
 
 This structured approach helps ensure the AI stays on track, makes it easier to debug issues, and gives you confidence in the generated code.
 
@@ -40,11 +41,11 @@ You can create a lightweight PRD directly within Cursor:
 
 With your PRD drafted (e.g., `MyFeature-PRD.md`), the next step is to generate a detailed, step-by-step implementation plan for your AI Developer.
 
-1.  Ensure you have `generate-tasks-from-prd.mdc` accessible.
+1.  Ensure you have `generate-tasks.mdc` accessible.
 2.  In Cursor's Agent chat, use the PRD to create tasks:
 
     ```
-    Now take @MyFeature-PRD.md and create tasks using @generate-tasks-from-prd.mdc
+    Now take @MyFeature-PRD.md and create tasks using @generate-tasks.mdc
     ```
     *(Note: Replace `@MyFeature-PRD.md` with the actual filename of the PRD you generated in step 1.)*
 
@@ -82,13 +83,34 @@ You'll see a satisfying list of completed items grow, providing a clear visual o
 
 ![Example of a progressing task list with completed items](https://pbs.twimg.com/media/Go6KrXZWkAA_UuX?format=jpg&name=medium)
 
+### 6️⃣ (Optional) Get Technical Leadership Review 🔍
+
+For complex features or when you want to ensure the highest code quality, you can get a comprehensive technical review:
+
+1.  Ensure you have the `technical-leader-review.mdc` file accessible.
+2.  In Cursor's Agent chat, request a technical review:
+
+    ```
+    Use @technical-leader-review.mdc 
+    Review these files: @file1.ts @file2.tsx @component.js
+    Focus on: [architecture/performance/security/best practices]
+    ```
+
+This will generate a detailed technical review with:
+- Code quality assessment and scoring
+- Architecture recommendations
+- Quick wins and prioritized improvements
+- Implementation roadmap with timelines
+- Best practices and standards guidance
+
 While it's not always perfect, this method has proven to be a very reliable way to build out larger features with AI assistance.
 
 ## 🗂️ Files in this Repository
 
 *   **`create-prd.mdc`**: Guides the AI in generating a Product Requirement Document for your feature.
-*   **`generate-tasks-from-prd.mdc`**: Takes a PRD markdown file as input and helps the AI break it down into a detailed, step-by-step implementation task list.
+*   **`generate-tasks.mdc`**: Takes a PRD markdown file as input and helps the AI break it down into a detailed, step-by-step implementation task list.
 *   **`process-task-list.mdc`**: Instructs the AI on how to process the generated task list, tackling one task at a time and waiting for your approval before proceeding. (This file also contains logic for the AI to mark tasks as complete).
+*   **`technical-leader-review.mdc`**: Provides comprehensive technical reviews and architectural guidance from a senior technical leader perspective, focusing on code quality, best practices, and actionable improvements.
 
 ## 🌟 Benefits
 
@@ -97,11 +119,13 @@ While it's not always perfect, this method has proven to be a very reliable way 
 *   **Manages Complexity:** Breaks down large features into smaller, digestible tasks for the AI, reducing the chance of it getting lost or generating overly complex, incorrect code.
 *   **Improved Reliability:** Offers a more dependable approach to leveraging AI for significant development work compared to single, large prompts.
 *   **Clear Progress Tracking:** Provides a visual representation of completed tasks, making it easy to see how much has been done and what's next.
+*   **Technical Excellence:** Get senior-level code reviews and architectural guidance to ensure high quality, maintainability, and best practices.
+*   **Quick Wins Focus:** Prioritized recommendations help you achieve maximum impact with minimal effort.
 
 ## 🛠️ How to Use
 
 1.  **Clone or Download:** Get these `.mdc` files into your project or a central location where Cursor can access them.
-2.  **Follow the Workflow:** Systematically use the `.mdc` files in Cursor's Agent chat as described in the 5-step workflow above.
+2.  **Follow the Workflow:** Systematically use the `.mdc` files in Cursor's Agent chat as described in the 6-step workflow above.
 3.  **Adapt and Iterate:**
     *   Feel free to modify the prompts within the `.mdc` files to better suit your specific needs or coding style.
     *   If the AI struggles with a task, try rephrasing your initial feature description or breaking down tasks even further.
