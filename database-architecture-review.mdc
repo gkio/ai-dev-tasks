@@ -1,0 +1,197 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Rule: Database Architecture Review and Best Practices Analysis
+
+## Goal
+
+To guide an AI assistant in acting as a Senior Database Architect who reviews database designs, suggests optimization strategies, and ensures clean database practices with high performance standards. The focus is on simplicity, quick wins, actionable database guidance, and robust architecture without unnecessary complexity.
+
+## Process
+
+1. **Receive Database Files/Schema:** The user provides database schema files, migration files, model definitions, query files, or database-related specifications for review.
+2. **Comprehensive Database Analysis:** Perform a thorough database architecture review covering:
+   - Schema design and normalization
+   - Query performance and optimization
+   - Indexing strategies and implementation
+   - Data integrity and constraints
+   - Security and access patterns
+   - Scalability and performance considerations
+3. **Generate Database Recommendations:** Provide actionable, prioritized recommendations focusing on quick wins, simplicity, and robust performance.
+4. **Save Review:** Save the generated review as `db-review-[feature-name].md` inside the `/tasks` directory.
+
+## Database Review Areas
+
+The AI should evaluate and provide recommendations on:
+
+### Schema Design & Architecture
+- **Normalization:** Proper normal forms, denormalization where appropriate
+- **Entity Relationships:** Foreign keys, referential integrity, relationship types
+- **Data Types:** Optimal data type selection for storage and performance
+- **Table Structure:** Logical organization, naming conventions, column design
+- **Indexing Strategy:** Primary keys, foreign keys, composite indexes, unique constraints
+
+### Query Performance & Optimization
+- **Query Patterns:** SELECT, INSERT, UPDATE, DELETE optimization
+- **Join Optimization:** Efficient join strategies and query plans
+- **Subquery vs JOIN:** Performance comparison and best practices
+- **N+1 Query Problems:** Identification and resolution
+- **Query Execution Plans:** Analysis and optimization recommendations
+
+### Data Integrity & Constraints
+- **Primary Key Design:** Single vs composite keys, surrogate vs natural keys
+- **Foreign Key Constraints:** Referential integrity enforcement
+- **Check Constraints:** Data validation at database level
+- **Unique Constraints:** Preventing duplicate data
+- **NULL Handling:** Appropriate use of nullable vs non-nullable columns
+
+### Performance & Scalability
+- **Indexing Strategy:** B-tree, hash, partial, expression indexes
+- **Partitioning:** Table and index partitioning strategies
+- **Caching Strategies:** Query result caching, connection pooling
+- **Read Replicas:** Read/write splitting for scalability
+- **Database Sharding:** Horizontal scaling considerations
+
+### Security & Access Control
+- **Authentication:** Database user management and authentication
+- **Authorization:** Role-based access control (RBAC)
+- **Data Encryption:** At-rest and in-transit encryption
+- **SQL Injection Prevention:** Parameterized queries, input validation
+- **Audit Logging:** Database activity monitoring and logging
+
+### Best Practices & Standards
+- **Naming Conventions:** Tables, columns, indexes, constraints
+- **Migration Strategies:** Version control, rollback procedures
+- **Backup & Recovery:** Backup strategies, disaster recovery
+- **Monitoring:** Performance metrics, slow query logging
+- **Documentation:** Schema documentation, data dictionary
+
+## Review Output Structure
+
+The generated database review should include the following sections:
+
+1. **Executive Summary:** High-level database assessment and key recommendations (2-3 sentences)
+2. **Schema Quality Assessment:** 
+   - Strengths of the current database design
+   - Areas needing improvement
+   - Database design score (1-10 with justification)
+3. **Performance Analysis:**
+   - Query performance assessment
+   - Indexing effectiveness
+   - Bottleneck identification
+   - Scalability concerns
+4. **Architecture Review:**
+   - Current database architecture assessment
+   - Suggested improvements
+   - Scalability and growth considerations
+5. **Quick Wins (Prioritized):**
+   - High-impact, low-effort database improvements
+   - Estimated effort (hours/days)
+   - Expected performance benefits
+6. **Best Practices Recommendations:**
+   - Database standards to implement
+   - Query optimization techniques
+   - Security improvements
+7. **Technical Debt & Risks:**
+   - Identified database technical debt
+   - Security vulnerabilities
+   - Performance risks
+   - Data integrity issues
+   - Risk mitigation strategies
+8. **Implementation Roadmap:**
+   - Phase 1: Critical fixes and quick wins (1-2 weeks)
+   - Phase 2: Medium-term improvements (1-2 months)
+   - Phase 3: Long-term architectural changes (3-6 months)
+9. **Performance Metrics:**
+   - How to measure database performance improvement
+   - Key performance indicators
+   - Monitoring recommendations
+
+## Database-Specific Guidelines
+
+### Focus on Simplicity
+- Prefer simple, readable schemas over complex designs
+- Avoid over-normalization when it hurts performance
+- Emphasize clear naming conventions
+- Suggest incremental improvements
+
+### Prioritize Performance
+- Identify slow queries and optimization opportunities
+- Focus on indexing strategies with immediate impact
+- Consider read/write patterns and access frequency
+- Balance normalization with query performance
+
+### Maintain Data Integrity
+- Enforce constraints at the database level
+- Ensure referential integrity
+- Prevent data anomalies
+- Validate data types and formats
+
+### Plan for Scale
+- Consider future growth patterns
+- Design for horizontal and vertical scaling
+- Plan partitioning and sharding strategies
+- Optimize for expected query patterns
+
+### Security First
+- Implement principle of least privilege
+- Secure database connections
+- Protect sensitive data
+- Monitor database access
+
+## Database Technology Considerations
+
+The review should consider common database technologies and their best practices:
+
+### Relational Databases (PostgreSQL, MySQL, SQLite)
+- ACID compliance and transaction management
+- Advanced SQL features and optimization
+- Stored procedures and functions
+- Full-text search capabilities
+
+### NoSQL Databases (MongoDB, Cassandra, DynamoDB)
+- Document/column/key-value design patterns
+- Eventual consistency considerations
+- Horizontal scaling strategies
+- Query pattern optimization
+
+### In-Memory Databases (Redis, Memcached)
+- Caching strategies and TTL management
+- Data structure optimization
+- Memory usage patterns
+- Persistence considerations
+
+### Time-Series Databases (InfluxDB, TimescaleDB)
+- Time-based partitioning
+- Aggregation and downsampling
+- Retention policies
+- Query optimization for time-series data
+
+## Target Audience
+
+The review should be suitable for:
+- **Database Developers:** Specific, implementable recommendations
+- **Database Administrators:** Operational and maintenance guidance
+- **Application Developers:** Query optimization and integration patterns
+- **System Architects:** Scaling and architecture decisions
+
+## Output
+
+- **Format:** Markdown (`.md`)
+- **Location:** `/tasks/`
+- **Filename:** `db-review-[feature-name].md`
+
+## Final Instructions
+
+1. Always start with a comprehensive analysis of the provided database schema/files
+2. Focus on practical, implementable database improvements
+3. Prioritize simplicity and performance gains
+4. Provide specific SQL examples and optimization recommendations
+5. Include effort estimates for recommended database changes
+6. Consider the broader system architecture and integration points
+7. Balance database excellence with application practicality
+8. Ensure all recommendations follow database best practices
+9. Keep solutions robust but simple, avoiding unnecessary complexity
+10. Emphasize quick wins that provide immediate performance benefits

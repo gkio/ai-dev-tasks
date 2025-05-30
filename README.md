@@ -103,6 +103,49 @@ This will generate a detailed technical review with:
 - Implementation roadmap with timelines
 - Best practices and standards guidance
 
+### 7️⃣ (Optional) Database Architecture Review 🗄️
+
+For database-heavy features or when you need to optimize database performance and design, you can get a specialized database architecture review:
+
+1.  Ensure you have the `database-architecture-review.mdc` file accessible.
+2.  In Cursor's Agent chat, request a database review:
+
+    ```
+    Use @database-architecture-review.mdc
+    Review these files: @schema/migrations.sql @models/User.ts @queries/reports.sql
+    Focus on: [schema design/query performance/indexing/security/scalability]
+    ```
+
+This will generate a comprehensive database review with:
+- Schema quality assessment and scoring
+- Performance analysis and query optimization
+- Indexing strategy recommendations
+- Security and data integrity assessment
+- Scalability planning and best practices
+- Quick wins for immediate performance improvements
+
+### 8️⃣ (Optional) System Architecture Review 🏗️
+
+For comprehensive system design evaluation and when you need enterprise-level architectural guidance, you can get a detailed system architecture review:
+
+1.  Ensure you have the `system-architecture-review.mdc` file accessible.
+2.  In Cursor's Agent chat, request a system architecture review:
+
+    ```
+    Use @system-architecture-review.mdc
+    Review these files: @architecture/system-design.md @infrastructure/terraform/ @services/api/
+    Focus on: [scalability/security/performance/modernization/cloud-native patterns]
+    ```
+
+This will generate a comprehensive system architecture review with:
+- Architecture maturity assessment and scoring
+- Scalability and performance evaluation
+- Security architecture and threat modeling
+- Infrastructure and deployment pattern analysis
+- Technology modernization recommendations
+- Implementation roadmap with ROI analysis
+- Production-ready best practices and industry standards
+
 While it's not always perfect, this method has proven to be a very reliable way to build out larger features with AI assistance.
 
 ## 🗂️ Files in this Repository
@@ -111,6 +154,8 @@ While it's not always perfect, this method has proven to be a very reliable way 
 *   **`generate-tasks.mdc`**: Takes a PRD markdown file as input and helps the AI break it down into a detailed, step-by-step implementation task list.
 *   **`process-task-list.mdc`**: Instructs the AI on how to process the generated task list, tackling one task at a time and waiting for your approval before proceeding. (This file also contains logic for the AI to mark tasks as complete).
 *   **`technical-leader-review.mdc`**: Provides comprehensive technical reviews and architectural guidance from a senior technical leader perspective, focusing on code quality, best practices, and actionable improvements.
+*   **`database-architecture-review.mdc`**: Provides specialized database architecture reviews focusing on schema design, query performance, indexing strategies, security, and scalability with practical optimization recommendations.
+*   **`system-architecture-review.mdc`**: Provides enterprise-level system architecture reviews focusing on scalable, secure, high-performance system design patterns, modern tooling, and production-ready best practices with a simplicity-first approach.
 
 ## 🌟 Benefits
 
@@ -120,12 +165,13 @@ While it's not always perfect, this method has proven to be a very reliable way 
 *   **Improved Reliability:** Offers a more dependable approach to leveraging AI for significant development work compared to single, large prompts.
 *   **Clear Progress Tracking:** Provides a visual representation of completed tasks, making it easy to see how much has been done and what's next.
 *   **Technical Excellence:** Get senior-level code reviews and architectural guidance to ensure high quality, maintainability, and best practices.
+*   **Architectural Excellence:** Get enterprise-level system architecture reviews with production-ready patterns and modern best practices.
 *   **Quick Wins Focus:** Prioritized recommendations help you achieve maximum impact with minimal effort.
 
 ## 🛠️ How to Use
 
 1.  **Clone or Download:** Get these `.mdc` files into your project or a central location where Cursor can access them.
-2.  **Follow the Workflow:** Systematically use the `.mdc` files in Cursor's Agent chat as described in the 6-step workflow above.
+2.  **Follow the Workflow:** Systematically use the `.mdc` files in Cursor's Agent chat as described in the 8-step workflow above.
 3.  **Adapt and Iterate:**
     *   Feel free to modify the prompts within the `.mdc` files to better suit your specific needs or coding style.
     *   If the AI struggles with a task, try rephrasing your initial feature description or breaking down tasks even further.
